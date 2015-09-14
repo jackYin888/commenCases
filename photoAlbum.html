@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>照片展</title>
+	<style type="text/css">
+	section{
+		position:absolute;
+		
+		width:100%;
+		height: 100%;
+		
+		z-index:9999;
+		
+			
+
+	}
+	ul{
+		position:relative;
+		margin: 0 auto;
+		padding: 0;
+
+	}
+	.contentBox{
+		position: relative;
+	    width: 400px;
+	    height: 100px;
+	    /* top: 200px; */
+	    background: #00FF8B;
+	    z-index: 999;
+	    margin: 0 auto;
+	    /* bottom: 0; */
+	    top: 80%;
+		
+		
+	}
+	a{
+		color:#f00;
+		text-decoration: none;
+	}
+	.contentBox ul li{
+		position: relative;
+		display:inline-block;
+		width:100px;
+		height: 100px;
+		padding-top:26px;
+		padding-left:5px;
+		padding-right:5px;
+		box-sizing: border-box;
+		color:#f00;
+		line-height:74px;
+		text-align:center;
+		float: left;
+		text-transform:uppercase;
+	}
+	.clearfix:after{
+		content:'';
+		display:block;
+		clear:both;
+	}
+	.contentBox ul li:nth-of-type(1){
+		background: rgba(0,0,0,0.13);
+	}
+	.contentBox ul li:nth-of-type(3){
+		background:rgba(0,0,0,0.25);
+
+	}
+	.contentBox ul li:nth-of-type(2){
+		background:rgba(0,0,0,0.37);
+
+	}
+	.contentBox ul li:nth-of-type(4){
+		background:rgba(0,0,0,0.49);
+
+	}
+	.contentBox ul li:before{
+		content:'';
+		position: absolute;
+		width:50px;
+		height:50px;
+		border-radius:25px;
+		
+		top:-25px;
+		left:25px;
+	}
+	.contentBox ul li:nth-of-type(1):before{
+		background:url('img/1.jpg');
+		background-size:contain;
+		background-position:center;
+	}
+	.contentBox ul li:nth-of-type(2):before{
+		background-size:contain;
+		background-position:center;
+		background:url('img/2.jpg');
+	}
+	.contentBox ul li:nth-of-type(3):before{
+		
+		background-size:contain;
+		background-position:center;
+		background:url('img/3.jpg') no-repeat 10%;
+	}
+	.contentBox ul li:nth-of-type(4):before{
+		background-size:contain;
+		background-position:center;	
+		background:url('img/4.jpg');
+		
+	}
+
+	.contentBox ul li:after{
+		content:'';
+		position: absolute;
+		width:50px;
+		height:50px;
+		border-radius:25px;
+		background: rgba(0,0,0,0.3);
+		top:-25px;
+		left:25px;
+	}
+	.contentBox ul li:hover{
+		background: rgb(51, 160, 121);
+	}
+	.contentBox ul li:hover:after{
+		opacity:0;
+		
+	}
+	html,body{
+		height:100%;
+	}
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	.imgBox{	
+			
+		width:100%;
+		height:100%;
+		overflow:hidden;
+		left:0;
+		position:relative;
+		
+	}
+	.photo{
+		width:100%;
+		height:100%;
+		
+		top:0;
+	}
+	
+	@-webkit-keyframes 'zoomIn1'{
+		
+		0%{left:-300px;}
+		100% {left:0;}
+	}
+	@-webkit-keyframes 'scale2'{
+		0% {transform: scale(2);right:-300px;}
+		100% {transform:none;right:0;}
+	}
+	@-webkit-keyframes 'zoomIn2'{
+		0% {transform: scale(2);}
+		100% {transform: none;}
+	}
+	@-webkit-keyframes 'slideBottom'{
+		0%{top:-300px;}
+		100%{top:0;}
+	}
+	@-webkit-keyframes 'noTarget'{
+		0%{z-index:20;}
+		100%{z-index:20;}
+	}
+	:target{
+		position:absolute;
+		top:0;
+	}
+	#zoomIn1:target{
+		
+		z-index:100px;
+		animation-name:zoomIn1 ;
+		animation-duration:2s ;
+		animation-iteration-count: 1;
+	}
+	#scale2:target{
+		
+		z-index:100px;
+		animation-name:scale2 ;
+		animation-duration:1s ;
+		animation-iteration-count: 1;
+	}
+	#zoomIn2:target{
+		
+		z-index:100px;
+		animation-name:zoomIn2 ;
+		animation-duration:1s ;
+		animation-iteration-count: 1;
+	}
+	#slideBottom:target{
+		
+		z-index:100px;
+		animation-name:slideBottom ;
+		animation-duration:1s ;
+		animation-iteration-count: 1;
+	}
+	.photo:not(:target){
+		display:none;
+		animation-name: noTarget;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+	}
+
+	</style>
+</head>
+<body>
+<section>
+	<div class="contentBox">
+		<ul class='clearfix'>
+			<li><a href="#zoomIn1">jack</a> </li>
+			<li><a href="#scale2">rose</a></li>
+			<li><a href="#zoomIn2">angel</a></li>
+			<li><a href="#slideBottom">gzhu</a></li>
+		</ul>
+	</div>
+	
+</section>
+<div class="imgBox">
+		<img class="photo photo1" id='zoomIn1' src="img/1.jpg" />
+		<img class="photo photo2" id='scale2' src="img/2.jpg" />
+		<img class="photo photo3" id='zoomIn2' src="img/3.jpg"/>
+		<img class="photo photo4" id='slideBottom'src="img/2.jpg"/>
+	</div>
+
+</body>
+</html>

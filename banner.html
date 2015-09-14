@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>imgBoxTest</title>
+	<style>
+	ul{
+		list-style: none;
+	}
+	.choose span{
+		display:inline-block;
+		width:9px;
+		height:9px;
+		background: #fff;
+	}
+	.imgBox{
+		position:relative;
+		width:500px;
+		height:300px;
+		background: #eee;
+		overflow:hidden;
+		
+	}
+	.imgList{
+		position:absolute;
+	}
+	
+	.selector{
+		position:absolute;
+		bottom:10px;
+		right:100px;
+	}
+	.selector li{
+		float:left;
+		margin:10px;
+		cursor:pointer;
+	}
+	.on{
+		position:absolute;
+		top:0;
+	}
+	</style>
+</head>
+<body>
+	<div class="imgBox">
+		<ul class='imgList'>
+			<li><img src="img/1.jpg" width='500px' height='300px' alt=""></li>
+			<li><img src="img/2.jpg" width='500px' height='300px' alt=""></li>
+			<li><img src="img/3.jpg" width='500px' height='300px' alt=""></li>
+		</ul>
+		<ul class='selector'>
+			<li class='choose'><span></span></li>
+			<li class='choose'><span></span></li>
+			<li class='choose'><span></span></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+	var imgList =document.getElementsByClassName('imgList')[0];
+	var imgItems=imgList.getElementsByTagName('li');
+	var selectorItems=document.getElementsByClassName('selector')[0].getElementsByTagName('li');
+	for(var i=0,j=selectorItems.length;i<j;i++){
+		selectorItems[i].index=i;
+		selectorItems[i].onmouseover=function(){
+			
+			console.log(this.index);
+			
+			imgList.style.top=-this.index*300+'px';
+			
+
+			}
+		
+		
+	}
+	</script>
+</body>
+</html>

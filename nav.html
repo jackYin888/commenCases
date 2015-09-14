@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航测试</title>
+	<style type="text/css">
+
+	nav{
+		position:relative;
+		height:40px;
+		width:500px;
+		margin: 0 auto;
+		padding:0;
+		text-align:center;
+
+	}
+	ul{
+
+		margin:0;
+		padding: 0;		
+		list-style:none;
+	}
+	nav li.menu{
+		
+		display:inline-block;
+		float:left;
+		width:100px;
+		height:40px;
+		line-height:40px;
+		background: rgba(5, 112, 144, 0.55);;
+		border-right:1px solid #fff;
+		box-sizing: border-box;
+	}
+	.drop{
+		position:absolute;
+		top:40px;			
+		padding: 10px;
+		display: block;
+		/*border:1px solid #eee;*/
+		background: rgba(94, 251, 89, 0.75);
+		display: none;
+	}
+	li.menu:hover{
+		background:rgba(94, 251, 89, 0.75);
+	}
+	li.menu:hover .drop{
+		display:block;
+	}
+	.pro{
+		height:500px;
+		width:300px;
+		background: #fea;
+	}
+	.drop ul li{
+		font-size:16px;
+		height:30px;
+		line-height:30px;
+		width:80px;
+	}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li class="menu">test
+				<div class ="drop">
+					<ul>
+						<li>测试1</li>
+						<li>测试2</li>
+						<li>测试3</li>
+						<li>测试4</li>
+					</ul>
+				</div>
+			</li>
+			<li class="menu">test
+				<div class="drop">
+					<ul>
+						<li>测试1</li>
+						<li>测试2</li>
+						<li>测试3</li>
+						<li>测试4</li>
+					</ul>
+				</div>
+			</li>
+			<li class="menu">test
+				<div class="drop pro"></div>
+			</li>
+			<li class="menu">test
+				<div class="drop">
+					<ul>
+						<li>测试1</li>
+						<li>测试2</li>
+						<li>测试3</li>
+						<li>测试4</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>
