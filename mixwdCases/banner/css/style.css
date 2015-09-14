@@ -1,0 +1,51 @@
+ul{
+	
+	list-style: none;
+}
+img,ul,li{
+	padding:0;
+	margin: 0;
+}
+.banner{
+	position: relative;
+	width:100%;
+	height: 300px;
+	background: #000;
+	overflow: hidden;
+}
+#bannerBox{
+	position:absolute;
+	width:100%;
+}
+#bannerBox li{
+	display: block;
+	height:300px;
+
+}
+#bannerBox img{
+
+	width: 100%;
+	height: 300px;
+}
+#selector{
+	position: absolute;
+	bottom:0px;
+	right: 150px;
+	
+}
+#selector li{
+	float: left;
+	margin: 10px;
+}
+
+#selector span{
+	display: inline-block;
+	width:9px;
+	height: 9px;
+	border-radius: 50%;
+	-webkit-border-radius:;
+	background: #fff;
+}
+.on{
+	background: #00FFB5!important;
+}
